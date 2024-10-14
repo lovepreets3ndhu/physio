@@ -25,26 +25,39 @@
             </div>
         </div>
     </header>
-   <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Treatment Available</a></li>
-            <li><a href="#">Book Appointment</a></li>
-            <li><a href="#">Contact Us</a></li>
+    <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" class="h1">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <span class="kd">Simple header</span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
         </ul>
-    </nav>
-
+    </div>
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <div class="hero-section">
+        <div class="scroll-container">
+          <div class="scroll-item item-1">Welcome to Slide 1</div>
+          <div class="scroll-item item-2">Welcome to Slide 2</div>
+          <div class="scroll-item item-3">Welcome to Slide 3</div>
+        </div>
+    
+        <!-- Scroll buttons -->
+        <button class="scroll-button scroll-left" onclick="scrollLeft()">&#10094;</button>
+        <button class="scroll-button scroll-right" onclick="scrollRight()">&#10095;</button>
+      </div>
+      <!-- Hero Section -->
+    <!--section id="home" class="hero">
         <div class="hero-content">
             <h2>Your Trusted Physiotherapy Partner</h2>
             <p>Personalized physiotherapy treatment to help you live a pain-free life.</p>
             <a href="#book" class="btn">Book an Appointment</a>
         </div>
-    </section>
+    </section-->
 
     <!-- About Section -->
     <section id="about" class="about">
