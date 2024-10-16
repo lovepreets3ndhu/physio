@@ -52,125 +52,194 @@ header .header-right {
 
 .h1{
     background-color: #fff;
+    margin:0px 0px;
 }
 .kd{
     margin-left: 150px;
 }
+/* Container for the header */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* Removes padding on top and bottom */
+}
+
+/* Logo */
+.logo {
+    height: 70px;
+    width: auto;
+    padding: 0;
+    margin-left: 20px; /* Removes padding on top and bottom */
+    margin-right: auto; /* Aligns the logo to the left */
+}
+
+/* Navigation bar */
+
+.nav {
+    margin-left: auto; /* Pushes the navigation bar to the right */
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.nav-item {
+    list-style: none;
+    margin-left: 20px; /* Adds space between navigation items */
+}
+
 .nav-link {
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
+}
 
-  .nav-link:hover {
+.nav-link:hover {
     background-color: #007bff; /* Highlight background on hover */
-    color: white;              /* Change text color to white */
-  }
+    color: white; /* Change text color to white */
+}
 
-  .nav-link.active {
+.nav-link.active {
     background-color: #007bff; /* Active link background */
-    color: white;              /* Active link text color */
-  }
+    color: white; /* Active link text color */
+}
+
+/* Optional: Remove the border-bottom from the header */
+.border-bottom {
+    border-bottom: none; /* Remove bottom border from header */
+}
+
+/* Adjusting for the flex-wrap behavior to avoid wrapping */
+.flex-wrap {
+    flex-wrap: nowrap; /* Ensures the navigation doesn't wrap to a new line */
+}
+
 /* Hero Section */
-.hero {
-    background: url('physio-bg.jpg') no-repeat center center/cover;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.hero h2 {
-    color: white;
-    font-size: 3rem;
+.main {
+  height: 100vh;
+  width: 100%;
 }
 
-.hero p {
-    color: white;
-    font-size: 1.5rem;
-    margin: 20px 0;
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.hero .btn {
-    background: #50b3a2;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
+.slide {
+  overflow: hidden;
 }
 
-.hero .btn:hover {
-    background: #3a8d7d;
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    background-color: #f5f5f5;
+
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.image-data span.text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+a.button:hover {
+  color: #fff;
+  background-color: #c87e4f;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-button-next {
+  right: 50px;
+}
+
+.swiper-button-prev {
+  left: 50px;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
   }
 
-  .scroll-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll; /* Horizontal scroll */
-    scroll-behavior: smooth;
-    height: 100%;
-    width: 100%;
+  .swiper-pagination-bullet {
+    visibility: visible;
   }
-
-  .scroll-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-  }
-
-  .scroll-item {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-    flex-shrink: 0;
-    display: flex;
-    justify-content:baseline;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-size: 3em;
-  }
-
-  /* Example background images for the hero section */
-  .item-1 {
-    background-image: url('https://via.placeholder.com/1200x800?text=Slide+1');
-  }
-
-  .item-2 {
-    background-image: url('https://via.placeholder.com/1200x800?text=Slide+2');
-  }
-
-  .item-3 {
-    background-image: url('https://via.placeholder.com/1200x800?text=Slide+3');
-  }
-
-  /* Left and Right Scroll buttons */
-  .scroll-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-  }
-
-  .scroll-left {
-    left: 20px;
-  }
-
-  .scroll-right {
-    right: 20px;
-  }
-
+}
 /* About Section */
 .about, .services, .testimonials, .contact {
     padding: 50px 0;
