@@ -126,6 +126,8 @@ header .header-right {
 .main {
   height: 100vh;
   width: 100%;
+  height: 550px;
+  flex-wrap: wrap;
 }
 
 .wrapper,
@@ -144,24 +146,20 @@ header .header-right {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
 .slide .image {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit:fill;
 }
 
 .slide .image-data {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  transform: translate(50%, -50%);
   width: 100%;
-  z-index: 100;
 }
 
 .image-data span.text {
@@ -169,12 +167,21 @@ header .header-right {
   font-weight: 400;
   color: #fff;
 }
+.fa{
+  text-align: left;
+}
+.image-data {
+  text-align: left;
+  padding-right: 50%; /* Add some padding if needed */
+}
 
 .image-data h2 {
   font-size: 45px;
   font-weight: 600;
   color: #fff;
+  text-align: left; /* Align the text to the left */
 }
+
 
 a.button {
   display: inline-block;
