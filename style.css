@@ -130,9 +130,7 @@ header .header-right {
   flex-wrap: wrap;
 }
 
-.wrapper,
-.slide {
-  position: relative;
+.wrapper, .slide {
   width: 100%;
   height: 100%;
 }
@@ -143,23 +141,23 @@ header .header-right {
 
 .slide::before {
   content: "";
-  position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 10;
 }
 
 .slide .image {
   height: 100%;
   width: 100%;
-  object-fit:fill;
+  object-fit: fill;
 }
 
 .slide .image-data {
-  position: absolute;
-  top: 50%;
-  transform: translate(50%, -50%);
-  width: 100%;
+  position: absolute; /* Position it relative to the parent */
+  top: 50%;  /* Center vertically */
+  left: 0;  /* Align to the left */
+  transform: translate(0, -50%);  /* Offset by 50% vertically to center */
+  padding-left: 20px; /* Optional padding */
+  margin-left: 20px;
 }
 
 .image-data span.text {
@@ -167,21 +165,25 @@ header .header-right {
   font-weight: 400;
   color: #fff;
 }
-.fa{
-  text-align: left;
+
+.image-data h3{
+  padding-left: 10px;
+  color:#fff;
+  margin-left: 10px;
 }
-.image-data {
+
+.fa {
   text-align: left;
-  padding-right: 50%; /* Add some padding if needed */
 }
 
 .image-data h2 {
   font-size: 45px;
   font-weight: 600;
   color: #fff;
-  text-align: left; /* Align the text to the left */
+  text-align: left !important; /* Ensure left alignment */
+  margin-left: 0 !important;    /* Ensure no extra margin */
+  padding-left: 20px !important; /* Adjust padding if necessary */
 }
-
 
 a.button {
   display: inline-block;
@@ -196,14 +198,15 @@ a.button {
 
 a.button:hover {
   color: #fff;
-  background-color: #c87e4f;
+  background-color: #000000;
 }
+
 
 /* swiper button css */
 .nav-btn {
   height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 60%;
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -213,6 +216,7 @@ a.button:hover {
 
 .swiper-button-next {
   right: 50px;
+  font-size: small;
 }
 
 .swiper-button-prev {
@@ -309,16 +313,114 @@ a.button:hover {
 }
 
 /* Footer */
+/* General Footer Styles */
 footer {
-    background: #50b3a2;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+footer p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+/* Footer Logo */
+footer .logo img {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+
+/* Social Media Links */
+footer .sociallink {
+  margin-top: 10px;
+}
+
+footer .sociallink li {
+  display: inline-block;
+}
+
+footer .sociallink img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .sociallink img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Links */
+footer .link,
+footer .category {
+  list-style: none;
+  padding: 0;
+}
+
+footer .link li,
+footer .category li {
+  margin-bottom: 10px;
+}
+
+footer .link li a,
+footer .category li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+footer .link li a:hover,
+footer .category li a:hover {
+  color: #007bff;
+}
+
+/* Contact Information */
+footer .footerinr ul li {
+  margin-bottom: 10px;
+}
+
+footer .footerinr ul li i {
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  footer .footerinr {
+      text-align: center;
+  }
 }
 
 /* Popup */
 .popup {
     display: none;
     position: fixed;
+}
+h2 {
+  font-size: 2.5em;
+  text-align: left !important;
+  margin-left: 0px !important;
+  display: block;
 }
