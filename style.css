@@ -314,105 +314,15 @@ a.button:hover {
 
 /* Footer */
 /* General Footer Styles */
-footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
-  font-size: 14px;
-  color: #333;
-}
-
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-footer .row {
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
+  margin-top: calc(-1* var(--bs-gutter-y));
+  margin-right: calc(-.5* var(--bs-gutter-x));
+  margin-left: calc(-.5* var(--bs-gutter-x));
 }
-
-footer h4 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-footer p {
-  margin-bottom: 10px;
-  color: #666;
-}
-
-/* Footer Logo */
-footer .logo img {
-  max-width: 150px;
-  margin-bottom: 15px;
-}
-
-/* Social Media Links */
-footer .sociallink {
-  margin-top: 10px;
-}
-
-footer .sociallink li {
-  display: inline-block;
-}
-
-footer .sociallink img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-footer .sociallink img:hover {
-  transform: scale(1.2);
-}
-
-/* Footer Links */
-footer .link,
-footer .category {
-  list-style: none;
-  padding: 0;
-}
-
-footer .link li,
-footer .category li {
-  margin-bottom: 10px;
-}
-
-footer .link li a,
-footer .category li a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-footer .link li a:hover,
-footer .category li a:hover {
-  color: #007bff;
-}
-
-/* Contact Information */
-footer .footerinr ul li {
-  margin-bottom: 10px;
-}
-
-footer .footerinr ul li i {
-  color: #007bff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  footer .row {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  footer .footerinr {
-      text-align: center;
-  }
-}
-
 /* Popup */
 .popup {
     display: none;
