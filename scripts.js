@@ -1,3 +1,13 @@
+window.onscroll = function() {
+  const header = document.querySelector('header');
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 100) { // Adjust this value to your preference
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+};
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   loop: true,

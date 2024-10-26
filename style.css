@@ -1,115 +1,146 @@
 /* General styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Basic body styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
+/* Top bar styles for contact information */
+.top-bar {
+  background-color: #1f73bb;
+  padding: 10px;
+  text-align: right;
+  color: white;
+  transition: all 0.3s ease; /* Smooth transition for style change */
+  padding-right: 20px;
 }
 
-/* Header */
+.top-bar .contact-info {
+  display: inline-flex;
+  gap: 20px;
+}
+
+.contact-item {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-item svg {
+  margin-right: 5px;
+}
+
+/* Navigation bar styles */
+/* Navigation bar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centers items vertically */
+  padding: 5px 20px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease; /* Smooth transition for style change */
+}
+
+/* Navigation links styles */
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  font-size: large; /* Ensures links are vertically centered */
+}
+
+.nav-links li {
+  margin-left: 15px; /* Reduced spacing between options */
+}
+
+.nav-links ul {
+  margin-bottom: 0 !important; /* Add specificity and !important */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f73bb; /* Initially blue text */
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px 15px; /* Equal padding above, below, left, and right */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #1f73bb; /* Blue background on hover */
+  color: white; /* White text on hover */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Optional: Active link style */
+.nav-links a.active {
+  background-color: #1f73bb;
+  color: white;
+  border-radius: 5px;
+}
+
+.logo img {
+  height: 65px; /* Initial logo height */
+  transition: height 0.3s ease; /* Smooth transition for logo size */
+}
+
+
+/* Space above the content to prevent overlap with the fixed navbar */
+main {
+  padding-top: 10px; /* Adjust based on the navbar height */
+}
+
+/* Style changes on scroll */
+header.scrolled .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 25px; /* Rounded edges */
+}
+
+header.scrolled .top-bar {
+  display: none; /* Hide top bar on scroll */
+}
+
+header.scrolled .logo img {
+  height: 50px; /* Smaller logo */
+}
+
+/* Ensures the header takes up full width */
 header {
-    background: #3c90df;
-    color: white;
-    padding: 7px 20px;
+  width: 100%;
 }
 
-header h1 {
-    margin: 0;
-}
-
-header .header-left {
-    background-color: #3c90df;
-    float: left;
-    font-family:'Times New Roman', Times, serif
-}
-
-header .header-right {
-    background-color:#3c90df;
-    float: right;
-    display: flex;
+/* Make the navigation bar fully responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
     align-items: center;
+  }
 
-}
+  .nav-links li {
+    margin: 10px 0;
+  }
 
-.header-right .contact-info {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.h1{
-    background-color: #fff;
-    margin:0px 0px;
-}
-.kd{
-    margin-left: 150px;
-}
-/* Container for the header */
-.d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0; /* Removes padding on top and bottom */
-}
-
-/* Logo */
-.logo {
-    height: 70px;
-    width: auto;
-    padding: 0;
-    margin-left: 20px; /* Removes padding on top and bottom */
-    margin-right: auto; /* Aligns the logo to the left */
-}
-
-/* Navigation bar */
-
-.nav {
-    margin-left: auto; /* Pushes the navigation bar to the right */
-    display: flex;
-    margin-right: 20px;
-    align-items: center;
-}
-
-.nav-item {
-    list-style: none;
-    margin-left: 20px; /* Adds space between navigation items */
-}
-
-.nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: #007bff; /* Highlight background on hover */
-    color: white; /* Change text color to white */
-}
-
-.nav-link.active {
-    background-color: #007bff; /* Active link background */
-    color: white; /* Active link text color */
-}
-
-/* Optional: Remove the border-bottom from the header */
-.border-bottom {
-    border-bottom: none; /* Remove bottom border from header */
-}
-
-/* Adjusting for the flex-wrap behavior to avoid wrapping */
-.flex-wrap {
-    flex-wrap: nowrap; /* Ensures the navigation doesn't wrap to a new line */
+  .navbar {
+    flex-direction: column;
+  }
 }
 
 /* Hero Section */
