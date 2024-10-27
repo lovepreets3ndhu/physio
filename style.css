@@ -388,14 +388,23 @@ a.button:hover {
 
 /* Footer */
 /* General Footer Styles */
+footer{
+  background-color: #ffffff;
+  padding: 10px;
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1* var(--bs-gutter-y));
-  margin-right: calc(-.5* var(--bs-gutter-x));
-  margin-left: calc(-.5* var(--bs-gutter-x));
+}
+.logo {
+  height: 70px;
+  width: auto;
+  padding: 0;
+  margin-left: 20px; /* Removes padding on top and bottom */
+  margin-right: auto; /* Aligns the logo to the left */
 }
 /* Popup */
 .popup {
