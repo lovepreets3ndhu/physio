@@ -396,9 +396,21 @@ a.button:hover {
 
 /* Footer */
 /* General Footer Styles */
+/* Footer */
+/* General Footer Styles */
 footer{
-  background-color: #ffffff;
+  background-color: #1f73bb;
+  color: #fff;
   padding: 10px;
+}
+h4{
+  font-size:xx-large;
+  font-family:"",Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+.links{
+  color: #fff ;
+  text-decoration: none;
 }
 .row {
   --bs-gutter-x: 1.5rem;
@@ -411,9 +423,11 @@ footer{
   height: 70px;
   width: auto;
   padding: 0;
+  background-color: #fff;
   margin-left: 20px; /* Removes padding on top and bottom */
   margin-right: auto; /* Aligns the logo to the left */
 }
+
 /* Popup */
 .popup {
     display: none;
@@ -424,4 +438,9 @@ h2 {
   text-align: left !important;
   margin-left: 0px !important;
   display: block;
+}
+.footerinr hr {
+  border-top: 1px solid #ffffff;
+  margin: 15px 0;
+  width:200px;
 }
