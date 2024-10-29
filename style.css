@@ -105,14 +105,21 @@ main {
 }
 
 /* Style changes on scroll */
+/* Style changes on scroll */
+/* Style changes on scroll */
 header.scrolled .navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the navbar */
+  width: 90%; /* Adjust width to make it look like a box */
+  max-width: 1200px; /* Optional: set max width for larger screens */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 25px; /* Rounded edges */
+  border: 2px solid black; /* Black border around the navbar */
 }
+
+
 
 header.scrolled .top-bar {
   display: none; /* Hide top bar on scroll */
@@ -168,7 +175,7 @@ header {
 
 .dropdown-content a {
   color: #1f73bb;
-  padding: 10px 15px;
+  padding: 10px 10px;
   text-decoration: none;
   display: block;
   font-weight: 500;
@@ -178,11 +185,12 @@ header {
 .dropdown-content a:hover {
   background-color: #1f73bb;
   color: white;
+
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} 
 
 
 
