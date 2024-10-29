@@ -1,3 +1,16 @@
+function loadHTML(id, url) {
+  fetch(url)
+      .then((response) => response.text())
+      .then((data) => {
+          document.getElementById(id).innerHTML = data;
+      });
+}
+
+// Load header and footer on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  loadHTML('Header', 'header.html');
+  loadHTML('footer', 'footer.html');
+});
 window.onscroll = function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;
