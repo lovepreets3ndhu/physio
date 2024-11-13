@@ -332,6 +332,56 @@ a.button:hover {
     visibility: visible;
   }
 }
+/* why us*/
+/* Basic styling */
+#treatments h2 span {
+  color: #ffffff;
+}
+
+.whyicon img,
+.imgsc img {
+  transition: transform 0.3s ease;
+}
+
+.whyleft .whyr,
+.treatmentsinr {
+  background-color: #d0e4f7;
+  border: 1px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whyleft .whyr:hover,
+.treatmentsinr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.whycontent h4 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.whycontent p,
+.content h4 {
+  color: #0056b3;
+}
+
+.content h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.imgsc img {
+  width: 100%;
+  border-radius: 8px;
+}
+
 /* About Section */
 .about, .services, .testimonials, .contact {
     padding: 50px 0;
