@@ -105,12 +105,10 @@ main {
 }
 
 /* Style changes on scroll */
-/* Style changes on scroll */
-/* Style changes on scroll */
+
 header.scrolled .navbar {
   position: fixed;
   top: 0;
-  left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center the navbar */
   width: 90%; /* Adjust width to make it look like a box */
   max-width: 1200px; /* Optional: set max width for larger screens */
