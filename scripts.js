@@ -79,15 +79,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+//what we treat
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".carousel");
+  const arrowBtns = document.querySelectorAll(".wrapper i");
+  const firstCard = carousel.querySelector(".card");
+  const firstCardWidth = firstCard.offsetWidth;
 
-// Add hover effect to treatment cards using jQuery
-$(document).ready(function () {
-  $('.treatmentsinr').hover(
-    function () {
-      $(this).find('img').css('transform', 'scale(1.1)');
-    },
-    function () {
-      $(this).find('img').css('transform', 'scale(1)');
-    }
-  );
+  let isDragging = false,
+      startX,
+      startScrollLeft,
+      autoPlayTimeout;
+
+  const autoPlay = () => {
+      autoPlayTimeout = setInterval(() => {
+          carousel.scrollLeft += firstCardWidth;
+          if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth) {
+              carousel.scrollLeft = 0;
+          }
+      }, 10000);
+  };
+
+  const dragStart = (e) => {
+      isDragging = true;
+      carousel.classList.add("dragging");
+      startX = e.pageX;
+      startScrollLeft = carousel.scrollLeft;
+      clearInterval(autoPlayTimeout);
+  };
+
+  const dragging = (e) => {
+      if (!isDragging) return;
+      carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+  };
+
+  const dragStop = () => {
+      isDragging = false;
+      carousel.classList.remove("dragging");
+      autoPlay();
+  };
+
+  arrowBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+          carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+      });
+  });
+
+  carousel.addEventListener("mousedown", dragStart);
+  carousel.addEventListener("mousemove", dragging);
+  document.addEventListener("mouseup", dragStop);
+
+  autoPlay();
 });

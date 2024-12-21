@@ -352,6 +352,7 @@ element.style {
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 350px;
+  scroll-behavior: smooth;
 }
 
 
@@ -399,19 +400,115 @@ element.style {
 }
 
 /* About Section */
-.about, .services, .testimonials, .contact {
-    padding: 50px 0;
-    text-align: center;
+#whatwetreat {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
-.about h2, .services h2, .testimonials h2, .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+#whatwetreat h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.about p, .service-item p, .testimonial-item p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.wrapper {
+  padding: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper i {
+  height: 50px;
+  width: 50px;
+  background: rgb(118, 233, 118);
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 1.25rem;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 10;
+}
+
+.wrapper i:first-child {
+  left: 10px; /* Adjusted position */
+}
+
+.wrapper i:last-child {
+  right: 10px;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  scroll-snap-align: start;
+  height: 340px;
+  list-style: none;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  cursor: pointer;
+  width: 98%;
+  padding-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card .img {
+  background: green;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+}
+
+.card .img img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+
+.card span {
+  color: #6a6d78;
+  font-size: 1.31rem;
+}
+
+.read-more {
+  font-size: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .read-more {
+  opacity: 1;
 }
 
 /* Services */
