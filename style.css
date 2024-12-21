@@ -334,8 +334,11 @@ a.button:hover {
 }
 /* why us*/
 /* Basic styling */
-.treatments /*h2 span*/ {
+#treatments /*h2 span*/ {
   background-color: #ffffff;
+}
+#treatments h2 {
+  text-align: center !important; /* Forces the override */
 }
 element.style {
   background-color: #ffffff;
