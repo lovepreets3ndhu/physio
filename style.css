@@ -334,11 +334,15 @@ a.button:hover {
 }
 /* why us*/
 /* Basic styling */
-#treatments h2 span {
-  color: #ffffff;
+.treatments /*h2 span*/ {
+  background-color: #ffffff;
+}
+element.style {
+  background-color: #ffffff;
+  padding: 40px 0;
 }
 .whyleft {
-  background-color: #2ed9c3; /* Matching turquoise color */
+  background-color: #2e8fd9; /* Matching turquoise color */
   border-radius: 15px;
   padding: 20px;
   color: #fff;
