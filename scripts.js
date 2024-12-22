@@ -131,3 +131,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
   autoPlay();
 });
+
+
+//testimoniuals
+document.addEventListener("DOMContentLoaded", () => {
+  const addTestimonialBtn = document.getElementById("add-testimonial-btn");
+  const modal = document.getElementById("add-testimonial-modal");
+  const closeModalBtn = document.querySelector(".close-btn");
+  const testimonialForm = document.getElementById("testimonial-form");
+  const testimonialsWrapper = document.querySelector(".testimonials-wrapper");
+
+  // Open modal
+  addTestimonialBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+  });
+
+  // Close modal
+  closeModalBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+  });
+
+  // Submit new testimonial
+  testimonialForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const testimonialText = document.getElementById("testimonial-text").value;
+      const testimonialName = document.getElementById("testimonial-name").value;
+
+      // Create new testimonial card
+      const newTestimonial = document.createElement("div");
+      newTestimonial.classList.add("testimonial-card");
+      newTestimonial.innerHTML = `
+          <p>"${testimonialText}"</p>
+          <h3>- ${testimonialName}</h3>
+      `;
+
+      // Append to testimonials wrapper
+      testimonialsWrapper.appendChild(newTestimonial);
+
+      // Reset form and close modal
+      testimonialForm.reset();
+      modal.style.display = "none";
+  });
+
+  // Close modal if clicked outside the content
+  window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+});

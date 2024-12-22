@@ -217,12 +217,34 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-item">
-                <p>"KD Physio helped me recover from my injury faster than I expected!"</p>
-                <p>- John Doe</p>
+    <section id="testimonials">
+        <h1>What Our Clients Say</h1>
+        <div class="testimonials-wrapper">
+            <div class="testimonial-card">
+                <p>"The team provided exceptional care, and I could see a significant improvement in my recovery process. Highly recommend!"</p>
+                <h3>- John Doe</h3>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their expertise in treating sports injuries is remarkable. I was back on track sooner than expected."</p>
+                <h3>- Sarah Smith</h3>
+            </div>
+            <div class="testimonial-card">
+                <p>"Amazing services and a very professional team. I felt very comfortable throughout the process."</p>
+                <h3>- Alex Brown</h3>
+            </div>
+        </div>
+        <button id="add-testimonial-btn">Add Testimonial</button>
+
+        <!-- Add Testimonial Modal -->
+        <div id="add-testimonial-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Add Your Testimonial</h2>
+                <form id="testimonial-form">
+                    <textarea id="testimonial-text" placeholder="Write your testimonial here..." required></textarea>
+                    <input type="text" id="testimonial-name" placeholder="Your Name" required />
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
     </section>
