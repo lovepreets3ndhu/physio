@@ -191,8 +191,18 @@
             <i id="right" class="fa-solid fas fa-angle-right"></i>
         </div>
     </section>
+   <section class="elementor-section elementor-top-section elementor-element elementor-element-451a76d elementor-section-boxed elementor-section-height-default lazyloaded" data-id="451a76d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" data-e-bg-lazyload="">
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+		</section>
     <!-- Services Section -->
-    <section id="services" class="services">
+    <!--section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-list">
@@ -217,37 +227,61 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h1>What Our Clients Say</h1>
-        <div class="testimonials-wrapper">
-            <div class="testimonial-card">
-                <p>"The team provided exceptional care, and I could see a significant improvement in my recovery process. Highly recommend!"</p>
-                <h3>- John Doe</h3>
-            </div>
-            <div class="testimonial-card">
-                <p>"Their expertise in treating sports injuries is remarkable. I was back on track sooner than expected."</p>
-                <h3>- Sarah Smith</h3>
-            </div>
-            <div class="testimonial-card">
-                <p>"Amazing services and a very professional team. I felt very comfortable throughout the process."</p>
-                <h3>- Alex Brown</h3>
-            </div>
-        </div>
-        <button id="add-testimonial-btn">Add Testimonial</button>
+ <section id="testimonials">
+  <h1>What Our Clients Say</h1>
+  <div class="testimonials-wrapper">
+    <div class="testimonial-card">
+      <div class="profile-picture">
+        <img src="profile1.jpg" alt="John Doe">
+      </div>
+      <p>"The team provided exceptional care, and I could see a significant improvement in my recovery process. Highly recommend!"</p>
+      <h3>- John Doe</h3>
+    </div>
+    <div class="testimonial-card">
+      <div class="profile-picture">
+        <img src="profile2.jpg" alt="Sarah Smith">
+      </div>
+      <p>"Their expertise in treating sports injuries is remarkable. I was back on track sooner than expected."</p>
+      <h3>- Sarah Smith</h3>
+    </div>
+    <div class="testimonial-card">
+      <div class="profile-picture">
+        <img src="profile3.jpg" alt="Alex Brown">
+      </div>
+      <p>"Amazing services and a very professional team. I felt very comfortable throughout the process."</p>
+      <h3>- Alex Brown</h3>
+    </div>
+  </div>
+  <button id="admin-login-btn">Owner Login</button>
 
-        <!-- Add Testimonial Modal -->
-        <div id="add-testimonial-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Add Your Testimonial</h2>
-                <form id="testimonial-form">
-                    <textarea id="testimonial-text" placeholder="Write your testimonial here..." required></textarea>
-                    <input type="text" id="testimonial-name" placeholder="Your Name" required />
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <!-- Add Testimonial Modal -->
+  <div id="add-testimonial-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Add Your Testimonial</h2>
+      <form id="testimonial-form">
+        <textarea id="testimonial-text" placeholder="Write your testimonial here..." required></textarea>
+        <input type="text" id="testimonial-name" placeholder="Your Name" required />
+        <input type="file" id="testimonial-image" accept="image/*" />
+        <input type="file" id="testimonial-video" accept="video/*" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="admin-login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Owner Login</h2>
+      <form id="admin-login-form">
+        <input type="password" id="admin-password" placeholder="Enter Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">

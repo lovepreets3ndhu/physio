@@ -402,12 +402,12 @@ element.style {
 #whatwetreat {
   padding: 20px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #1f73bb;
 }
 
 #whatwetreat h1 {
   font-size: 2rem;
-  color: #333;
+  color: #333333;
   margin-bottom: 20px;
 }
 
@@ -472,7 +472,7 @@ element.style {
 }
 
 .card .img {
-  background: green;
+  background: #1f73bb;
   width: 145px;
   height: 145px;
   border-radius: 50%;
@@ -566,7 +566,7 @@ footer{
 }
 h4{
   font-size:xx-large;
-  font-family:"",Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Merriweather, serif;
   
 }
 .links{
@@ -624,21 +624,51 @@ h2 {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  perspective: 1000px;
 }
 
 .testimonial-card {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   padding: 20px;
   max-width: 300px;
   text-align: left;
+  transform: rotateY(10deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background-color: #1f73bb;
+  text-decoration: #ffffff;
+}
+
+.profile-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #28a745;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  background: #fff;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .testimonial-card p {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 10px;
+  margin: 20px 0 10px;
+  line-height: 1.5;
 }
 
 .testimonial-card h3 {
@@ -661,6 +691,60 @@ h2 {
 #add-testimonial-btn:hover {
   background-color: #218838;
 }
+
+/* Modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.close-btn {
+  color: #333;
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+textarea,
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
 
 /* Modal Styles */
 .modal {
@@ -716,3 +800,21 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #218838;
 }
+/*treatment avaliale*/
+  /* Float four columns side by side */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust for more columns */
+    gap: 10px; /* Adjust spacing */
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .grid-item {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 18px;
+  }

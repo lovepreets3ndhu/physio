@@ -135,49 +135,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //testimoniuals
 document.addEventListener("DOMContentLoaded", () => {
-  const addTestimonialBtn = document.getElementById("add-testimonial-btn");
   const modal = document.getElementById("add-testimonial-modal");
+  const openModalBtn = document.getElementById("add-testimonial-btn");
   const closeModalBtn = document.querySelector(".close-btn");
-  const testimonialForm = document.getElementById("testimonial-form");
-  const testimonialsWrapper = document.querySelector(".testimonials-wrapper");
 
   // Open modal
-  addTestimonialBtn.addEventListener("click", () => {
-      modal.style.display = "flex";
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "block";
   });
 
   // Close modal
   closeModalBtn.addEventListener("click", () => {
-      modal.style.display = "none";
+    modal.style.display = "none";
   });
 
-  // Submit new testimonial
-  testimonialForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const testimonialText = document.getElementById("testimonial-text").value;
-      const testimonialName = document.getElementById("testimonial-name").value;
-
-      // Create new testimonial card
-      const newTestimonial = document.createElement("div");
-      newTestimonial.classList.add("testimonial-card");
-      newTestimonial.innerHTML = `
-          <p>"${testimonialText}"</p>
-          <h3>- ${testimonialName}</h3>
-      `;
-
-      // Append to testimonials wrapper
-      testimonialsWrapper.appendChild(newTestimonial);
-
-      // Reset form and close modal
-      testimonialForm.reset();
+  // Close modal when clicking outside
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
       modal.style.display = "none";
+    }
   });
 
-  // Close modal if clicked outside the content
-  window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-          modal.style.display = "none";
-      }
+  // Add a new testimonial
+  const form = document.getElementById("testimonial-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const text = document.getElementById("testimonial-text").value;
+    const name = document.getElementById("testimonial-name").value;
+    const imageInput = document.getElementById("testimonial-image");
+    const imageSrc = imageInput.files[0]
+      ? URL.createObjectURL(imageInput.files[0])
+      : "default-profile.png";
+
+    const testimonialWrapper = document.querySelector(".testimonials-wrapper");
+
+    // Create a new testimonial card
+    const newCard = document.createElement("div");
+    newCard.classList.add("testimonial-card");
+    newCard.innerHTML = `
+      <div class="profile-picture">
+        <img src="${imageSrc}" alt="${name}">
+      </div>
+      <p>"${text}"</p>
+      <h3>- ${name}</h3>
+    `;
+
+    testimonialWrapper.appendChild(newCard);
+
+    // Reset form and close modal
+    form.reset();
+    modal.style.display = "none";
   });
 });
+
+//treatment avaliable
