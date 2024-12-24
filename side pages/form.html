@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="book-container">
+        <form action="" class="book-left">
+            <div class="book-left-title">
+                <h2>Book Appointment</h2>
+                <hr>
+            </div>
+            <h3>Personal Information</h3>
+            <input type="text" name="name" placeholder="Your Name" class="book-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="book-inputs" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" class="book-inputs" required>
+            <select name="gender" class="book-inputs" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <h3>Current Condition</h3>
+            <textarea name="reason_for_visit" placeholder="Reason for Visit" class="book-inputs" required></textarea>
+            <textarea name="symptoms_duration" placeholder="Duration of Symptoms" class="book-inputs" required></textarea>
+            <button type="submit">Submit<img src="../assests/arrow_icon.png"></button>
+
+
+        </form>
+        <div class="book-right">
+            <img src="../assests/physios.png" alt="">
+
+        </div>
+    </div>
+    
+</body>
+</html>
