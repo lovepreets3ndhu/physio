@@ -190,3 +190,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //treatment avaliable
+// Add event listeners for mouse interactions
+document.querySelectorAll('.service-item').forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      item.style.transform = `rotateY(${x * 0.05}deg) rotateX(${y * -0.05}deg)`;
+  });
+
+  item.addEventListener('mouseleave', () => {
+      item.style.transform = 'rotateY(0deg) rotateX(0deg)';
+  });
+});

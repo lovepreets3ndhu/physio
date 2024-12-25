@@ -1,0 +1,60 @@
+/* Footer */
+/* General Footer Styles */
+/* Footer */
+/* General Footer Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+footer{
+    background-color: #1f73bb;
+    color: #fff;
+    padding: 10px;
+    font-family: Merriweather, serif;
+  }
+  h4{
+    font-size:xx-large;
+    font-family: Merriweather, serif;
+    
+  }
+  .links{
+    color: #fff ;
+    text-decoration: none;
+  }
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+  }
+  .logo {
+    height: 70px;
+    width: auto;
+    padding: 0;
+    background-color: #fff;
+    margin-left: 20px; /* Removes padding on top and bottom */
+    margin-right: auto; /* Aligns the logo to the left */
+  }
+  
+  /* Popup */
+  .popup {
+      display: none;
+      position: fixed;
+  }
+  h2 {
+    font-size: 2.5em;
+    text-align: left !important;
+    margin-left: 0px !important;
+    display: block;
+  }
+  .footerinr hr {
+    border-top: 1px solid #ffffff;
+    margin: 20px 0;
+    width:200px;
+  }
+  ul {
+    list-style-type: none;
+}

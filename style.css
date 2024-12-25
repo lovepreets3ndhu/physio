@@ -332,72 +332,80 @@ a.button:hover {
     visibility: visible;
   }
 }
-/* why us*/
 /* Basic styling */
-#treatments /h2 span/ {
-  background-color: #ffffff;
+#treatments h2 span {
+    background-color: #ffffff;
 }
 #treatments h2 {
-  text-align: center !important; /* Forces the override */
+    text-align: center !important; /* Forces the override */
 }
+
+/* Section background */
 element.style {
-  background-color: #ffffff;
-  padding: 40px 0;
+    background-color: #ffffff;
+    padding: 40px 0;
 }
+
+/* Left column styles */
 .whyleft {
-  background-color: #2e8fd9; /* Matching turquoise color */
-  border-radius: 15px;
-  padding: 20px;
-  color: #fff;
-  text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 350px;
-  scroll-behavior: smooth;
+    background-color: #2e8fd9; /* Matching turquoise color */
+    border-radius: 15px;
+    padding: 20px;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    scroll-behavior: smooth;
 }
 
-
+/* Icons and transitions */
 .whyicon img,
 .imgsc img {
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
+/* Card styling */
 .whyr,
 .treatmentsinr {
-  background-color: #d0e4f7;
-  border: 1px solid #007bff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #d0e4f7;
+    border: 1px solid #007bff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
- .whyr:hover,
+.whyr:hover,
 .treatmentsinr:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Text content */
 .whycontent h4 {
-  font-size: 28px;
-  color: #007bff;
-  margin-bottom: 5px;
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 5px;
 }
 
 .whycontent p,
 .content h4 {
-  color: #0056b3;
+    color: #0056b3;
 }
 
+/* Card titles */
 .content h4 {
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 18px;
+    font-weight: 600;
 }
 
+/* Image styles */
 .imgsc img {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
+
 /* About Section */
 #whatwetreat {
   padding: 20px;
@@ -511,22 +519,59 @@ element.style {
 }
 
 /* Services */
+/* General Styles */
+.services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  margin-inline-start: 300px !important;
+  padding-left: 160px;
+  
+}
+
 .service-list {
-    display: flex;
-    justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .service-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 22%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  perspective: 1000px; /* Needed for 3D */
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 3D Hover Effect */
+.service-item:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-item h3 {
-    color: #50b3a2;
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-list {
+      grid-template-columns: 1fr;
+  }
 }
 
 /* Contact Form */
@@ -800,21 +845,3 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #218838;
 }
-/*treatment avaliale*/
-  /* Float four columns side by side */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust for more columns */
-    gap: 10px; /* Adjust spacing */
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  .grid-item {
-    background-color: #007bff; /* Blue color */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    font-size: 18px;
-  }

@@ -1,4 +1,13 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Header</title>
+  <link rel="stylesheet" href="/header/header.css">
+</head>
+<body>
+  <header>
     <!-- Top bar for email and contact info with icons -->
     <div class="top-bar">
       <div class="contact-info">
@@ -53,3 +62,17 @@
       </ul>
     </nav>
   </header>
+</body>
+<script>
+  window.onscroll = function () {
+    const header = document.querySelector('header');
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 100) { // Adjust this value as needed
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+</script>
+</html>
