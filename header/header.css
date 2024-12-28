@@ -149,7 +149,7 @@
     position: absolute;
     top: 100%; /* Position below the parent link */
     background-color: #fff;
-    min-width: 180px;
+    min-width: 220px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
     border-radius: 5px;
@@ -158,16 +158,16 @@
   }
   
   .dropdown-content li {
-    width: 80%;
+    width: 90%;
   }
   
   .dropdown-content a {
     color: #1f73bb;
-    padding: 10px 10px;
+    padding: 8px 8px;
     text-decoration: none;
     display: block;
     font-weight: 500;
-    border-radius: 5px; /* No extra border radius on hover */
+    border-radius: 4px; /* No extra border radius on hover */
   }
   
   .dropdown-content a:hover {
