@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Awards Grid with Full-Screen Viewer</title>
+  <link rel="stylesheet" href="/side pages/events.css">
+</head>
+<body>
+    <div id="Header"></div>
+    <div class="banner">
+        <h1> Events and Camps</h1>
+    </div>
+  <!-- Awards Grid -->
+  <div class="grid-container" id="grid-container">
+    <div class="grid-item"><img src="/assests/treatment available/IASTM.jpg" alt="Award 1"></div>
+    <div class="grid-item"><img src="/assests/faceboo.jpg" alt="Award 2"></div>
+    <div class="grid-item"><img src="/assests/instagram.jpg" alt="Award 3"></div>
+    <div class="grid-item"><img src="/assests/physios.png" alt="Award 4"></div>
+  </div>
+
+  <!-- Full-Screen Modal -->
+  <div id="image-modal" class="image-modal">
+    <span id="close-modal" class="close-modal">&times;</span>
+    <button id="prev-btn" class="nav-btn">&lt;</button>
+    <img id="modal-image" class="modal-image" src="" alt="Full-Screen Image">
+    <button id="next-btn" class="nav-btn">&gt;</button>
+  </div>
+  <div id="footer"></div>
+  <script >
+    function loadHTML(id, url) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(id).innerHTML = data;
+    });
+}
+
+// Load header and footer on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  loadHTML('Header', '/header/header.html');
+  loadHTML('footer', '/header/footer.html');
+});
+    // Full-Screen Modal Elements
+const imageModal = document.getElementById("image-modal");
+const modalImage = document.getElementById("modal-image");
+const closeModal = document.getElementById("close-modal");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+let currentImageIndex = 0;
+let images = [];
+
+// Initialize Image Click for Full-Screen
+function initializeImageClick() {
+  images = Array.from(document.querySelectorAll(".grid-item img"));
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentImageIndex = index;
+      modalImage.src = img.src;
+      imageModal.style.display = "flex";
+    });
+  });
+}
+
+// Close Modal
+closeModal.addEventListener("click", () => {
+  imageModal.style.display = "none";
+});
+
+// Navigate Between Images
+prevBtn.addEventListener("click", () => {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  modalImage.src = images[currentImageIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  modalImage.src = images[currentImageIndex].src;
+});
+
+// Initialize on Load
+initializeImageClick();
+
+  </script>
+</body>
+</html>

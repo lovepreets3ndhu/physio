@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Awards Grid with Hidden Upload</title>
+  <link rel="stylesheet" href="/side pages/awards.css">
+</head>
+<body>
+  <div id="Header"></div>
+  <div class="banner">
+    <h1> OUR AWARDS</h1>
+</div>
+  <h1 class="title">Our Awards</h1>
+
+
+  <!-- Awards Grid -->
+  <div class="grid-container">
+    <div class="grid-item"><img src="/assests/IMG_0400.jpg" alt="Award 1"></div>
+    <div class="grid-item"><img src="/assests/IMG_0401.jpg" alt="Award 2"></div>
+    <div class="grid-item"><img src="/assests/IMG_0392.jpg" alt="Award 3"></div>
+    <div class="grid-item"><img src="/assests/physios.png" alt="Award 4"></div>
+    <div class="grid-item"><img src="/assests/IMG_0400.jpg" alt="Award 1"></div>
+    <div class="grid-item"><img src="/assests/IMG_0401.jpg" alt="Award 2"></div>
+    <div class="grid-item"><img src="/assests/IMG_0392.jpg" alt="Award 3"></div>
+    <div class="grid-item"><img src="/assests/physios.png" alt="Award 4"></div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    function loadHTML(id, url) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(id).innerHTML = data;
+    });
+}
+
+// Load header and footer on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  loadHTML('Header', '/header/header.html');
+  loadHTML('footer', '/header/footer.html');
+});
+
+  </script>
+</body>
+</html>
