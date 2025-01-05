@@ -526,12 +526,12 @@ element.style {
   text-align: center;
 }
 
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  margin-inline-start: 300px !important;
-  padding-left: 160px;
-  
+.center-heading {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif; /* Elegant font */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
 }
 
 .service-list {
@@ -548,17 +548,30 @@ element.style {
   perspective: 1000px; /* Needed for 3D */
   transform-style: preserve-3d;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
 }
 
-/* 3D Hover Effect */
+.service-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .service-item:hover {
   transform: rotateY(10deg) rotateX(5deg);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.service-item h3 {
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service-title {
   font-size: 1.5rem;
-  color: #333;
+  color: #007BFF; /* Blue color */
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -573,6 +586,7 @@ element.style {
       grid-template-columns: 1fr;
   }
 }
+
 
 /* Contact Form */
 .contact form {
@@ -647,9 +661,10 @@ h2 {
 }
 .footerinr hr {
   border-top: 1px solid #ffffff;
-  margin: 15px 0;
-  width:200px;
+  margin: 15px;
+  width: 200px;
 }
+
 
 /*testimonial*/
 #testimonials {
