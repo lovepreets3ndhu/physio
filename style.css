@@ -889,3 +889,58 @@ button[type="submit"]:hover {
   background-color: #1da851;
   transform: scale(1.05);
 }
+/*awards*/
+.achievements {
+  padding: 2rem;
+  text-align: center;
+}
+
+.achievements-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Carousel Container */
+.image-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+.image-carousel::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
+}
+
+/* Individual Image Card */
+.image-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .image-card {
+    width: 50%; /* Display 2 cards on 800px screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .image-card {
+    width: 100%; /* Display 1 card on 500px screens */
+  }
+}

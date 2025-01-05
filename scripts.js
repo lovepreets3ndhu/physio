@@ -204,3 +204,27 @@ document.querySelectorAll('.service-item').forEach(item => {
       item.style.transform = 'rotateY(0deg) rotateX(0deg)';
   });
 });
+
+const carousel = document.getElementById('auto-carousel');
+
+// Auto-scroll interval (in milliseconds)
+const scrollInterval = 2000; // Adjust the interval as needed
+
+// Auto-scroll logic
+let scrollPosition = 0;
+
+function autoScroll() {
+  // Scroll the carousel by 300px (width of one card + gap)
+  scrollPosition += 300; 
+  if (scrollPosition >= carousel.scrollWidth - carousel.clientWidth) {
+    // If at the end, reset to the start
+    scrollPosition = 0;
+  }
+  carousel.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth',
+  });
+}
+
+// Start auto-scrolling
+setInterval(autoScroll, scrollInterval);
