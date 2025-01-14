@@ -1,117 +1,159 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  .banner {
-    background: url('../assests/bg.jpg')no-repeat center center/cover; /* Add background image */
-    color: white;
-    text-align: center;
-    padding: 40px 20px; /* Adjust padding for a better appearance */
-    position: relative;
+  font-family: 'Roboto', Arial, sans-serif; /* Modern font */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  color: #333; /* Default text color */
 }
 
+/* Banner Styles */
+.banner {
+  background: url('../assests/bg.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  font-family: 'Poppins', sans-serif; /* Stylish font for headings */
+}
 
 .banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Dark overlay */
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
 }
 
 .banner h1 {
-    position: relative;
-    z-index: 2; /* Ensure text is above the overlay */
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 2.5em;
+  letter-spacing: 2px; /* Subtle spacing for elegance */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add depth */
 }
 
-.banner h1 {
-    margin: 0;
-    font-size: 2.5em;
+/* Grid Styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
-  .title {
-    margin: 20px 0;
-    font-size: 2rem;
-    color: #333;
+
+.grid-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.grid-item img {
+  width: 100%;
+  background-color: #000;
+  height: 300px; /* Larger image size */
+  object-fit:contain;
+  padding:5px;
+  /*border-bottom: 1px solid #ddd;Optional separator line */
+}
+
+.grid-item .card-text {
+  font-size: 16px;
+  font-weight: bold; /* Semi-bold for readability */
+  color: #444; /* Softer dark color */
+  padding: 10px;
+  white-space: nowrap; /* Keep text in one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  background-color: #f5f5f5; /* Light background for text */
+  text-transform: capitalize; /* Make text uniform */
+  font-family: 'Open Sans', sans-serif; /* Elegant font */
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.grid-item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover shadow effect */
+  transform: translateY(-3px); /* Slight upward movement */
+}
+
+.grid-item .card-text:hover {
+  color: #007bff; /* Add a pop of color on hover */
+}
+
+/* Modal Styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+#prev-btn {
+  left: 20px;
+}
+
+#next-btn {
+  right: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .banner h1 {
+      font-size: 2em; /* Adjust banner text size for smaller screens */
   }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .grid-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+
   .grid-item img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    cursor: pointer;
+      height: 180px;
+      width:100% /* Smaller images for smaller screens */
   }
-  
-  /* Full-Screen Modal */
-  .image-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
+
+  .card-text {
+      font-size: 14px; /* Adjust text size */
   }
-  
-  .modal-image {
-    max-width: 90%;
-    max-height: 90%;
-    margin: auto;
-    display: block;
-  }
-  
-  .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 20px;
-  }
-  
-  #prev-btn {
-    left: 20px;
-  }
-  
-  #next-btn {
-    right: 20px;
-  }
-  
+}
