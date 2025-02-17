@@ -9,8 +9,8 @@ function loadHTML(id, url) {
 
 // Load header and footer on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-  loadHTML('Header', '/header/header.html');
-  loadHTML('footer', '/header/footer.html');
+  loadHTML('Header', '../header/header.html');
+  loadHTML('footer', '../header/footer.html');
 });
 
 // Change header style on scroll
